@@ -2,7 +2,7 @@
 
 A starttter project for hardware hacks.
 
-See `bin` folder for examples.
+See [`bin`](https://github.com/taktran/starttter-hardware/tree/master/bin) folder for examples.
 
 ## Development
 
