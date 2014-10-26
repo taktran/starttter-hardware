@@ -5,6 +5,8 @@
  *
  * Based off Johnny-five example: https://github.com/rwaldron/johnny-five/blob/master/docs/flexSensor.md
  */
+"use strict";
+
 var five = require("johnny-five");
 
 var board = new five.Board();
