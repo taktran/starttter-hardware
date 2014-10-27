@@ -10,21 +10,50 @@ Install pre-requisites
 
     npm install
 
-Start the server
+### Spark core
 
-    grunt
+Pre-requisites
 
-View the site at [http://localhost:7770](http://localhost:7770), or your local (internal) ip address (useful for testing on other devices). You can also run
+* [Spark core](https://www.spark.io/)
+* `npm install -g spark-cli`
+* `spark cloud login`
 
-    grunt open
+Get device state
 
-To run the site on another port, use the `port` flag eg,
+    spark get [device_name] state
 
-    grunt --port=3000
+Monitor state
 
-To run the site using a different livereload port (default is `35729`), use the `lrp` flag (prevents this error: `Fatal error: Port 35729 is already in use by another process.`) eg,
+    spark monitor [device_name] state 5000
 
-    grunt --lrp=35720
+Update color
+
+    spark call [device_name] update "100;100;0"
+
+To flash the device with code
+
+    spark flash [device_name] bin/spark/rgb-light.ino
+
+#### Serial
+
+To debug the spark, you can monitor serial output.
+
+Firstly, in the setup code
+
+    void setup() {
+        // Start serial connection
+        Serial.begin(9600);
+
+        // ...
+    }
+
+List connected serial devices
+
+    spark serial list
+
+Connect to device
+
+    spark serial monitor [list_id]
 
 ## Testing
 
