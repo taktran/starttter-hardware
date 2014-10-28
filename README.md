@@ -18,6 +18,10 @@ Pre-requisites
 * `npm install -g spark-cli`
 * `spark cloud login`
 
+Start the server
+
+* `npm install -g nodemon`
+
 Get device state
 
     spark get [device_name] state
