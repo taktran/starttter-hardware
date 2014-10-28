@@ -10,6 +10,7 @@ var jshint = require("gulp-jshint");
 var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 var args = require('yargs').argv;
+var traceur = require('gulp-traceur');
 
 var enableJSReload = args.jsreload;
 var isDebug = args.debug;
@@ -18,12 +19,15 @@ var isDebug = args.debug;
 // Paths & files
 var path = {
   "public": 'app/public/',
-  src: "app/public/js",
+  src: "app/src",
+
   html: 'app/public/**/*.html',
   sass: 'app/styles/**/*.scss',
   mainSass: 'app/styles/main.scss',
   css: 'app/public/css/',
   vendor: 'app/public/vendor',
+
+  jsAppSrc: "app/src/app.js",
   jsDist: 'app/public/js/',
 
   server: 'bin/server/*.js',
@@ -88,16 +92,13 @@ gulp.task('jshint:server', function() {
  * @return {Stream}
  */
 gulp.task('js', ['vendorJS'], function() {
-  var srcFiles = jsSrcFiles.concat([
-    // Ignore test files
-    "!**/*.spec.js"
-  ]);
 
-  return gulp.src(srcFiles)
+  return gulp.src(path.jsAppSrc)
     .pipe(sourcemaps.init())
-    .pipe(concat('app.js'))
+    .pipe(traceur())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(path.jsDist));
+
 });
 
 /**
