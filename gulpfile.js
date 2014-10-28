@@ -18,7 +18,7 @@ var isDebug = args.debug;
 // Paths & files
 var path = {
   "public": 'app/public/',
-  src: "app/public/js",
+  src: "app/src",
   html: 'app/public/**/*.html',
   sass: 'app/styles/**/*.scss',
   mainSass: 'app/styles/main.scss',
