@@ -1,8 +1,32 @@
-body {
-  padding-top: 50px;
+.rgb-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: white;
+
+  h1 {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 45px;
+  }
 }
 
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
+.other-color {
+  background-color: black;
+  margin: 20px auto 0;
+  width: 250px;
+  height: 60px;
+  padding: 10px;
+
+  input {
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+    font-size: 20px;
+
+    text-align: center;
+  }
 }
