@@ -65,6 +65,9 @@ void setRGBColor(String command) {
 
   sprintf(rgbColors, "{\"r\":%i,\"g\":%i,\"b\":%i}", rgbRed, rgbGreen, rgbBlue);
   Spark.publish(publishEventName, rgbColors);
+
+  Serial.println(command);
+  Serial.println(rgbColors);
 }
 
 void setOtherRGBColor(String command) {
