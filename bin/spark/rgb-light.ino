@@ -33,10 +33,6 @@ char rgbColors[64];
 String publishEventPrefix = "rgb:";
 String publishEventName = String(publishEventPrefix + Spark.deviceID());
 
-int random(int maxRand) {
-  return rand() % maxRand + 1;
-}
-
 void splitArgStringToArray(String arguments, String *target){
   int numArgs = 0;
   int beginIdx = 0;
