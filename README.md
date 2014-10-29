@@ -17,6 +17,7 @@ Pre-requisites
 * [Spark core](https://www.spark.io/)
 * `npm install -g spark-cli`
 * `spark cloud login`
+* Copy `app/public/config/config.example.js` to `app/public/config/config.js`, and add in spark core id
 
 Start the server
 

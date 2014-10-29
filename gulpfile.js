@@ -40,6 +40,7 @@ var jsTestFiles = [
   path.jsDist + "vendor.js",
 
   // Dist file
+  path["public"] + "config/config.js",
   path.jsDist + "app.js",
 
   // Test files
