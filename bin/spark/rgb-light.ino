@@ -30,8 +30,7 @@ int otherRgbBlue = 0;
 
 char rgbColors[64];
 
-String publishEventPrefix = "rgb:";
-String publishEventName = String(publishEventPrefix + Spark.deviceID());
+String publishEventName = "rgb";
 
 void splitArgStringToArray(String arguments, String *target){
   int numArgs = 0;
@@ -66,7 +65,7 @@ void setRGBColor(String command) {
   sprintf(rgbColors, "{\"r\":%i,\"g\":%i,\"b\":%i}", rgbRed, rgbGreen, rgbBlue);
   Spark.publish(publishEventName, rgbColors);
 
-  Serial.println(command);
+  Serial.println(publishEventName);
   Serial.println(rgbColors);
 }
 
@@ -116,6 +115,8 @@ void nextRandomColor() {
 
   sprintf(rgbColors, "{\"r\":%i,\"g\":%i,\"b\":%i}", rgbRed, rgbGreen, rgbBlue);
   Spark.publish(publishEventName, rgbColors);
+  Serial.println(publishEventName);
+  Serial.println(rgbColors);
 }
 
 void writeRgbColor() {
@@ -170,9 +171,6 @@ void setup() {
 
   // Register state variable
   Spark.variable("state", &rgbColors, STRING);
-
-  // Subscribe to color changes
-  Spark.subscribe(publishEventPrefix, onColorChange, MY_DEVICES);
 
   // Initialize the pushbutton pin as an input
   pinMode(buttonPin, INPUT);
