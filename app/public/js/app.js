@@ -4,7 +4,7 @@
   var urlPrefix = "https://api.spark.io/v1/devices/" + CONFIG.sparkCoreId;
   var accessToken = "access_token=" + CONFIG.accessToken;
   var stateUrl = urlPrefix + "/state?" + accessToken;
-  var sparkEventsUrl = urlPrefix + "/events/rgb?" + accessToken;
+  var sparkEventsUrl = "https://api.spark.io/v1/events?" + accessToken;
 
   function setCoreColour(colorObj) {
     var rgbStr = colorObj.r + "," + colorObj.g + "," + colorObj.b;
